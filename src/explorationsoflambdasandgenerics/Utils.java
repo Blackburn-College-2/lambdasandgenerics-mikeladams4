@@ -19,16 +19,12 @@ public class Utils {
     should take 2 parameters, (1) an instance of any type and (2) an int of the
     number of times to repeat said element in an arraylist.
      */
-   
-
-    /*
+ /*
     2. Write a function called indexedOutput that takes an ArrayList of any type
     and RETURNS a two line string where the first line is the index of each
     element.
      */
-   
-
-    /*
+ /*
     3. A few steps for this one. Similar to the modify integer functionality we
     did in class.
     (1) create a single method interface called IntegerModifier with a method
@@ -45,9 +41,7 @@ public class Utils {
     Here is one you can use:
          assert modifyIntegerXTimes(x -> x + 1, 5, -1) == 4 : "+1 modify test failed";
      */
-  
-
-    /*
+ /*
     4. Write a function called checkInvolutence
     (see https://en.wikipedia.org/wiki/Involution_(mathematics))
     In short, an involutive function is its own inverse. aka:
@@ -78,8 +72,44 @@ public class Utils {
     Hint 2: You will need to create an interface for each arguement in
     checkInvolutence.
      */
-   
+    public static <T> ArrayList repeat(T y, int x) {
+        ArrayList<T> aL = new ArrayList<>();
+        for (int i = 0; i < x; i++) {
+            aL.add(y);
+        }
+        return aL;
+    }
 
-  
+    /**
+     *
+     * @param ArrayList
+     * @return
+     */
+    public static String indexedOutput(ArrayList<?> aL) {
+        String s = "";
+        for (int i = 0; i < aL.size(); i++) {
+            s = s + i + " ";
+        }
+        s = s + "\n";
+        for (int i = 0; i < aL.size(); i++) {
+            s = s + aL.get(i).toString() + " ";
+        }
+        return s;
+    }
 
+    public static Integer modifyIntegerXTimes(IntegerModifier mod, int times, int y) {
+        Integer result = y;
+        for (int i = 0; i < times; i++) {
+            result = mod.modify(result);
+        }
+        return result;
+    }
+
+    public static void modifyIntegerXTimesTester(IntegerModifier mod, int times, int y) {
+        assert modifyIntegerXTimes(x -> x + 1, 5, -1) == 4 : "+1 modify test failed";
+        assert modifyIntegerXTimes(x -> x + 2, 3, 0) == 6 : "+2 modify test failed";
+        assert modifyIntegerXTimes(x -> x + 3, 6, 0) == 18 : "+3 modify test failed";
+        assert modifyIntegerXTimes(x -> x + 4, 2, 0) == 8 : "+4 modify test failed";
+        assert modifyIntegerXTimes(x -> x + 5, 5, 0) == 25 : "+5 modify test failed";
+    }
 }

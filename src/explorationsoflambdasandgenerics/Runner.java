@@ -17,9 +17,9 @@ public class Runner {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Utils.modifyIntegerXTimesTester();
-        Utils.testInvolutence();
-
+        //Utils.testInvolutence();
+        System.out.println(Utils.indexedOutput(Utils.repeat(Utils.modifyIntegerXTimes(x -> x+1, 5, 0), 5)));
+        Utils.modifyIntegerXTimesTester(x -> x+3, 6, 0);
     }
 
 }
