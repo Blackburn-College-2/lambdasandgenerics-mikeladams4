@@ -9,6 +9,7 @@ package explorationsoflambdasandgenerics;
  *
  * @author adams
  */
-public class NewClass {
+public interface Generic {
+    Integer check(Generic x);
     
 }

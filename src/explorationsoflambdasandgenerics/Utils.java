@@ -105,11 +105,15 @@ public class Utils {
         return result;
     }
 
-    public static void modifyIntegerXTimesTester(IntegerModifier mod, int times, int y) {
+    public static void modifyIntegerXTimesTester() {
         assert modifyIntegerXTimes(x -> x + 1, 5, -1) == 4 : "+1 modify test failed";
         assert modifyIntegerXTimes(x -> x + 2, 3, 0) == 6 : "+2 modify test failed";
         assert modifyIntegerXTimes(x -> x + 3, 6, 0) == 18 : "+3 modify test failed";
         assert modifyIntegerXTimes(x -> x + 4, 2, 0) == 8 : "+4 modify test failed";
         assert modifyIntegerXTimes(x -> x + 5, 5, 0) == 25 : "+5 modify test failed";
     }
+
+    //public static boolean checkInvolutence(Generic y, InstanceGen x) {
+    //nteger involutenceY = ;
+    //}
 }
